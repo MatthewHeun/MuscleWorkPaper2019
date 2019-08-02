@@ -114,6 +114,7 @@ muscle work \sep useful work \sep draft animals \sep human labor
 
 Here are two sample references: \cite{Feynman1963118,Dirac1953888}.
 
+Here is a line from Prof.\ Heun.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
