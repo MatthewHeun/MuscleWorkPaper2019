@@ -3,7 +3,34 @@
 \usepackage{lineno,hyperref}
 \modulolinenumbers[5]
 
-\journal{Journal of \LaTeX\ Templates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands provided by the authors.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Change name of figures to Fig. for the Elsevier style
+\renewcommand{\figurename}{Fig.}
+
+% Commands for editing.
+
+\usepackage{xcolor}            % For colored text
+\usepackage[normalem]{ulem}    % For \sout command (strikethrough)
+
+% From https://tex.stackexchange.com/questions/130623/crossing-out-using-different-colour,
+% Change the \sout color to red
+\newcommand{\redsout}{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{2pt}{0.4pt}}}\ULon}
+
+% Use these versions to display changes.
+\newcommand{\del}[1]{\textcolor{gray}{\redsout{#1}}}
+\newcommand{\ins}[1]{\textcolor{red}{#1}}
+\newcommand{\rev}[2]{\del{#1}\ins{#2}}
+
+% Use these versions for a clean copy.
+% \newcommand{\del}[1]{}
+% \newcommand{\ins}[1]{#1}
+% \newcommand{\rev}[2]{#2}
+
+
+\journal{Applied Energy}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Elsevier bibliography styles
@@ -39,73 +66,66 @@
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
-\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
-
-%% Group authors per affiliation:
-\author{Elsevier\fnref{myfootnote}}
-\address{Radarweg 29, Amsterdam}
-\fntext[myfootnote]{Since 1880.}
+\title{A worldwide time series of\\human and animal muscle work, 1800--2015}
 
 %% or include affiliations in footnotes:
-\author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
-\ead[url]{www.elsevier.com}
+\author[CalvinAddress]{Paul Steenwyk\corref{correspondingauthor}}
+\cortext[correspondingauthor]{Corresponding author}
+\ead{pms9@students.calvin.edu}
 
-\author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
-\cortext[mycorrespondingauthor]{Corresponding author}
-\ead{support@elsevier.com}
+\author[CalvinAddress]{Matthew Kuperus Heun}
+% \cortext[correspondingauthor]{Corresponding author}
+% \ead{mkh2@calvin.edu}
 
-\address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
-\address[mysecondaryaddress]{360 Park Avenue South, New York}
+\author[BrockwayAddress]{Paul E. Brockway}
+
+\author[SousaAddress]{T\^{a}nia Sousa}
+
+\address[CalvinAddress]{Engineering Department, Calvin University,\\3201 Burton St.\ SE, Grand Rapids, MI, 49546, USA}
+
+\address[BrockwayAddress]{Sustainability Research Institute, 
+School of Earth and Environment, University of Leeds,\\Leeds LS2 9JT, United Kingdom}
+
+\address[SousaAddress]{MARTEC -- Marine, Environment, and Technology Centre,\\Environment and Technology
+Scientific Area,\\Department of Mechanical Engineering, 
+Instituto Superio T\'{e}chnico (IST),\\University of Lisbon, Avenida Rovisco Pais 1, 1049-001 Lisbon, Portugal}
 
 \begin{abstract}
-This template helps you to create a properly formatted \LaTeX\ manuscript.
+**** Abstract goes here. ****
 \end{abstract}
 
 \begin{keyword}
-\texttt{elsarticle.cls}\sep \LaTeX\sep Elsevier \sep template
-\MSC[2010] 00-01\sep  99-00
+muscle work \sep useful work \sep draft animals \sep human labor
+\MSC[2010] 00-01 \sep  99-00 **** Decide MSC classifications ****
 \end{keyword}
 
 \end{frontmatter}
 
 \linenumbers
 
-\section{The Elsevier article class}
-
-\paragraph{Installation} If the document class \emph{elsarticle} is not available on your computer, you can download and install the system package \emph{texlive-publishers} (Linux) or install the \LaTeX\ package \emph{elsarticle} using the package manager of your \TeX\ installation, which is typically \TeX\ Live or Mik\TeX.
-
-\paragraph{Usage} Once the package is properly installed, you can use the document class \emph{elsarticle} to create a manuscript. Please make sure that your manuscript follows the guidelines in the Guide for Authors of the relevant journal. It is not necessary to typeset your manuscript in exactly the same way as an article, unless you are submitting to a camera-ready copy (CRC) journal.
-
-\paragraph{Functionality} The Elsevier article class is based on the standard article class and supports almost all of the functionality of that class. In addition, it features commands and options to format the
-\begin{itemize}
-\item document style
-\item baselineskip
-\item front matter
-\item keywords and MSC codes
-\item theorems, definitions and proofs
-\item lables of enumerations
-\item citation style and labeling.
-\end{itemize}
-
-\section{Front matter}
-
-The author names and affiliations could be formatted in two ways:
-\begin{enumerate}[(1)]
-\item Group the authors per affiliation.
-\item Use footnotes to indicate the affiliations.
-\end{enumerate}
-See the front matter of this document for examples. You are recommended to conform your choice to the journal you are submitting to.
-
-\section{Bibliography styles}
-
-There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Here are two sample references: \cite{Feynman1963118,Dirac1953888}.
 
-\section*{References}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+\label{sec:methods}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliography{MWPaper}
 
