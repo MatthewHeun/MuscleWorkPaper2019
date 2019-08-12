@@ -130,7 +130,7 @@ Here is a line from Prof.\ Heun.
 \end{figure}
 
 
-Figure~\ref{fig:vacation} shows Heun's vacation.
+Figure~\ref{fig:vacation} shows Heun's vacation. Heun added something.
 
 
 
