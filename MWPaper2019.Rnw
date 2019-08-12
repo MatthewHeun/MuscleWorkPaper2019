@@ -122,6 +122,18 @@ Here is a line from Prof.\ Heun.
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{figure_other/test_fig.png}
+\caption[short_caption]{This is a test figure for Paul to see how it works.}
+\label{fig:vacation}
+\end{figure}
+
+
+Figure~\ref{fig:vacation} shows Heun's vacation.
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
