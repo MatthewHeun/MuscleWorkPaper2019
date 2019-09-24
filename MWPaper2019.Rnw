@@ -2,6 +2,9 @@
 
 \usepackage{lineno,hyperref}
 \modulolinenumbers[5]
+% \usepackage{graphicxsp}
+% \usepackage{subfig}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commands provided by the authors.
@@ -158,7 +161,7 @@ For the world total, the total muscle work from each region was added together, 
 MW_{human,world,t} = \Sigma_{r,i} Workers_{r,i,t}P_iWHPY_{r,i,t}
 \end{equation}
 
-To find the final energy (food supply) used by working humans, the total daily caloric intake of workers in different industries was estimated using the lowest of the range of energy expenditures for "light activity" (non-working days) and the lowest of the "very active" and "moderately active" energy expenditure values for primary and secondary workers respectively \cite{FAO/WHO1973}. These values are tabulated in Appendix A \ref{appA}.
+To find the final energy (food supply) used by working humans, the total daily caloric intake of workers in different industries was estimated using the lowest of the range of energy expenditures for "light activity" (non-working days) and the lowest of the "very active" and "moderately active" energy expenditure values for primary and secondary workers respectively \cite{FAOWHO1973}. These values are tabulated in Appendix A \ref{appA}.
 
 \subsection{Animal Muscle Work}
 \label{subsec:AMW}
@@ -176,47 +179,44 @@ MW_{a,i,t} = DA_{a,i,t}P_aWHPY_{a,i,t}
 \section{Results}
 \label{sec:results}
 
-% Quad Chart Attempt - Compiler errors, likely due to my misunderstanding of packages. 
-% \begin{figure}
-%   \centering
-%   \begin{subfigure}{0.3\textwidth}
-%   \centering
-%   \includegraphics[width=0.1\linewidth]{MW_qty_by_Animal.png}
-%   \caption{Figure 1}
-%   \label{fig:first}
-%   \end{subfigure}
-%   \begin{subfigure}{0.3\textwidth}
-%   \centering
-%   \includegraphics[width=0.1\linewidth]{MW_%_by_Animal.png}
-%   \caption{Figure 2}
-%   \label{fig:second}
-%   \end{subfigure}
-%   \begin{subfigure}{0.3\textwidth}
-%   \centering
-%   \includegraphics[width=0.1\linewidth]{MW_qty_by_Region.png} \par
-%   \caption{Figure 3}
-%   \label{fig:third}
-%   \end{subfigure}
-%   \begin{subfigure}{0.3\textwidth}
-%   \centering
-%   \includegraphics[width=0.1\linewidth]{MW_%_by_Region.png}
-%   \caption{Figure 4}
-%   \label{fig:fourth}
-%   \end{subfigure}
+% \usepackage{graphicxsp}
+% \usepackage{subfig}
+
+% \begin{figure}[htp] % not h only
+% \centering
+% \subfigure[All instances]{%
+% \includegraphics[width=0.4\textwidth]{MW_qty_by_Animal.png}%
+% \label{fig:q_time_all}%
+% }\hfil
+% \subfigure[SAT instances]{%
+% \includegraphics[width=0.4\textwidth]{MW_percent_by_Animal.png}%
+% \label{fig:q_time_sat}%
+% }
+% 
+% \subfigure[UNSAT instances]{%
+% \includegraphics[width=0.4\textwidth]{MW_qty_by_Region.png}%
+% \label{fig:q_time_unsat}%
+% }\hfil
+% \subfigure[Uniform Random Sample]{%
+% \includegraphics[width=0.4\textwidth]{MW_percent_by_Region.png}%
+% \label{fig:q_time_sample}%
+% }
+% 
+% \caption{Q metric plotted against time}
 % \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\bibliography{MWPaper}
-
-\appendix
-\section{Appendix 1}
-\label{sec:App1}
-
-% Commented out until I can be sure appendix reference works
-% \begin{table}
-%   \includegraphics{Human_kcal_consumption_table.png}
-% \end{table}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% \bibliography{MWPaper}
+% 
+% \appendix
+% \section{Appendix 1}
+% \label{sec:App1}
+% 
+% % Commented out until I can be sure appendix reference works
+% % \begin{table}
+% %   \includegraphics{Human_kcal_consumption_table.png}
+% % \end{table}
 
 
 
