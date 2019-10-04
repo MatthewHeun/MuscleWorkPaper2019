@@ -6,11 +6,6 @@
 \usepackage{subcaption}
 
 
-% Typically, hyperref needs to be last.
-\usepackage{hyperref}
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commands provided by the authors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,6 +15,9 @@
 
 \usepackage{xcolor}            % For colored text
 \usepackage[normalem]{ulem}    % For \sout command (strikethrough)
+
+% Typically, hyperref needs to be last.
+\usepackage{hyperref}
 
 % From https://tex.stackexchange.com/questions/130623/crossing-out-using-different-colour,
 % Change the \sout color to red
@@ -118,8 +116,7 @@ muscle work \sep useful work \sep draft animals \sep human labor
 \section{Introduction}
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Here is a line from Prof.\ Heun.
+Here is a line from Prof. Heun.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,7 +127,6 @@ Here is a line from Prof.\ Heun.
 
 % Paul: It is better to use short lines rather than long lines.
 % Here is your original paragraph:
-
 The ultimate purpose of this study was to quantify
 the total yearly energy required from 1800-2015 for the purpose of muscle work.
 The energy required to fuel muscle work can be categorized in 3 ways:
@@ -182,13 +178,13 @@ To quantify how many workers were actually involved in muscle work activities, 4
 
 \begin{enumerate}
   \item Construct a time-series model of the human population in each region,
-  categorized as either male or female, using data from \cite{Maddison2018}.
+  categorized as either male or female, using data from Maddison2018.
   Several gaps in the data in Russia and Ukraine were filled using 
-  data from other sources \cite{TheRoyalGeographicalSociety1897}, \cite{popustat}.
+  data from other sources TheRoyalGeographicalSociety1897, popustat.
   \item Quantify the proportion of regional working populations 
-  data on the labor force participation rate for those above 15 years of age \cite{ILOSTATea}
-  and the proportion of the population above 15 years of age \cite{WorldBank15+}.
-  \item Construct time-series models using \cite{Mitchell2013} data to determine 
+  data on the labor force participation rate for those above 15 years of age ILOSTATea
+  and the proportion of the population above 15 years of age WorldBank15+.
+  \item Construct time-series models using Mitchell2013 data to determine 
   the proportion of male/female workers in each of the 3 levels of industry: Primary, Secondary, Tertiary.
   \item The equation for finding the total number of workers in each industry, "i", in year, "t" is
   \begin{equation}
@@ -198,7 +194,7 @@ To quantify how many workers were actually involved in muscle work activities, 4
 
 To use these results to calculate useful (muscle) work,
 the total number of working hours per year by region and industry had to be estimated. 
-A model was constructed using data from the ILO (1980-2015, \cite{ILOSTATwhpy}) 
+A model was constructed using data from the ILO (1980-2015, ILOSTATwhpy) 
 for working hours per week by industry. 
 cases where data was unavailable before this time, 
 pre-1980 working hours were assumed to be equal to 1980 model values.
@@ -215,9 +211,9 @@ MW_{human,r,i,t} = Workers_{r,i,t}P_iWHPY_{r,i,t}
 
 $P_i$ refers to the power output [W] of workers in industry "$i$". 
 Values for an agricultural worker's power output was based
-off of Smil's value for maximum human labor power output \cite{Smil2004}.
+off of Smil's value for maximum human labor power output Smil2004.
 This estimate was the same as that put forth by
-Giampietro and Pimentel \cite{Giampietro1990},
+Giampietro and Pimentel Giampietro1990,
 
 % Paul: The Giampietro1990 refernce is not in the .bib file.
 % You can't compile the paper unless you have all references
@@ -245,7 +241,7 @@ To find the final energy (food supply) used by working humans,
 the total daily caloric intake of workers in different industries was estimated 
 using the lowest of the range of energy expenditures for "light activity" (non-working days)
 and the lowest of the "very active" and "moderately active" energy expenditure values
-for primary and secondary workers respectively \cite{FAOWHO1973}. 
+for primary and secondary workers respectively FAOWHO1973. 
 
 
 These values are tabulated in Appendix A \ref{appA}.
@@ -257,14 +253,62 @@ These values are tabulated in Appendix A \ref{appA}.
 %++++++++++++++++++++++++++++++
 
 The method for calculating animal muscle work also involved a bottom-up approach, 
-wherein work was calculated based off of each animals' power output,
-the average length of their workday, and the number of days they worked in a given year.
+wherein work was calculated based off of the number of draught animals $(DA_{a,i,t})$, 
+the average power output of each animal $(P_a)$,
+and the nummber of hours they worked in a given year $(WHPY_{a,i,t})$. 
 
-The equation used to find the total animal muscle work per year is
+Animal work was broken down into 2 end-uses: agricultural (mechanical)
+and transport work. The percentage of total draft animals in each category
+was denoted by $EU\%_{a,i,t}$.
+
+The equation used to find the total animal muscle work used for agriculture or transport
+per year is
 \begin{equation}
-MW_{a,i,t} = DA_{a,i,t}P_aWHPY_{a,i,t}
+MW_{a,i,t,end-use} = DA_{a,i,t}P_aWHPY_{a,i,t}EU\%_{a,i,t}
 \end{equation}
 
+To quantify how many animals were involved in draft in each region,
+and what end-uses they were involved in,
+the following process was followed.
+
+\begin{enumerate}
+  \item Construct a time-series model of the population of each animal type, 
+  in each region. The source data for this model came from Mitchell2013, and the FAO. 
+  \item Compare draft animal estimates from Ramaswami to published FAO data
+  on the total number of livestock in each region. From this comparison,
+  an estimate of the percentage of animals who were involved in draft
+  was calculated by the equation
+  \begin{equation}
+  (\frac{DA}{TA})_{i,a, 1983} = \frac{DA_{Ramaswami, 1983}}{TA_{FAO,1983}}
+  \end{equation}
+  As Ramaswami's data only included major countries (e.g. China, India),
+  it was assumed that these ratios could be applied to whole regions.
+  \item To reflect the changing trends of draft animal usage,
+  and the increasing phenomenon of livestock being raised solely for consumption,
+  several methods were used 
+  \begin{itemize}
+    \item In some cases, datapoints for the number of animals in draft
+    were available. In these scenarios, trends were estimated to fit these values,
+    and fit qualitative trends presented in the literature 
+    (e.g. the draft oxen's swift decline in 1920s-1930s North America)
+    \item The total livestock used for milk/meat production
+  were subtracted from the total number of livestock. 
+  Before 1961 where no FAO data was available for this, 
+  the proportion of animals used for draft purposes calculated using this method
+  was assumed to be constant.
+    \item In some cases, these changes had to be estimated, 
+  based off of the narrative of historians. 
+  One noteworthy case of this was in Africa,
+  where historians noted that wide-spread usage
+  of oxen for plowing did not begin until the colonial period had ended. [Blench1997]
+  %need to look up other sources for this%
+    \end{itemize}
+  \item The available data on end-uses of animal work was at the country level,
+  and only for specific years. 
+  Thus, the assumption had to be made that this data could be scaled up to the regional level.
+  In some cases, no data was available for even 1 country within a region. 
+  In this case, a similar region's data was used to fill in 
+  (e.g. Mules in Africa fill in for E. Europe)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,6 +383,6 @@ MW_{a,i,t} = DA_{a,i,t}P_aWHPY_{a,i,t}
 %   \includegraphics{Human_kcal_consumption_table.png}
 % \end{table}
 
-\bibliography{MWPaper.bib}
+\bibliography{MWPaper}
 
 \end{document}
