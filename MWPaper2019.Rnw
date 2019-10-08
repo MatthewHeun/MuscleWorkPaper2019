@@ -198,7 +198,7 @@ A model was constructed using data from the ILO (1980-2015, ILOSTATwhpy)
 for working hours per week by industry. 
 cases where data was unavailable before this time, 
 pre-1980 working hours were assumed to be equal to 1980 model values.
-Appendix \ref{App1} lists other sources
+\ref{appendix:appA} lists other sources
 and a more complete method on how working times were calculated.
 
 With data on working hours by region,
@@ -244,7 +244,7 @@ and the lowest of the "very active" and "moderately active" energy expenditure v
 for primary and secondary workers respectively FAOWHO1973. 
 
 
-These values are tabulated in Appendix A \ref{appA}.
+These values are tabulated in \ref{appendix:appA}.
 
 
 %++++++++++++++++++++++++++++++
@@ -309,7 +309,10 @@ the following process was followed.
   In some cases, no data was available for even 1 country within a region. 
   In this case, a similar region's data was used to fill in 
   (e.g. Mules in Africa fill in for E. Europe)
-
+  In addition, these proportions were assumed to be constant over the 215 years studied.
+  This assumption was checked for India, where it seemed to be reasonable for 25 years.
+  This check is shown in \ref{appendix:appB}
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -330,9 +333,9 @@ the following process was followed.
 %   You may need to place the figures atop one another temproarily in Excel to get it right. 
 % * Ensure that all subfigure legends are same
 
-\begin{figure}
+\begin{figure}[!htb]
 
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.49\textwidth}
   % include first image
   \centering
   \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Region.png}
@@ -340,7 +343,7 @@ the following process was followed.
   \label{fig:MW_by_region}
 \end{subfigure}
 % Commented line here puts two subfigures on same line
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.49\textwidth}
   % include second image
   \centering
   \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Region.png}
@@ -352,7 +355,7 @@ the following process was followed.
 \begin{subfigure}{0.49\textwidth}
   % include third image
   \centering
-  \includegraphics[width=.8\linewidth]{figure_other/MW_qty_by_Animal.png}
+  \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Animal.png}
   \caption{Muscle work by animal.}
   \label{fig:MW_by_animal}
 \end{subfigure}
@@ -360,7 +363,7 @@ the following process was followed.
 \begin{subfigure}{0.49\textwidth}
   % include fourth image
   \centering
-  \includegraphics[width=.8\linewidth]{figure_other/MW_percent_by_Animal.png}
+  \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Animal.png}
   \caption{Muscle work percentages by animal.}
   \label{fig:MW_by_animal_perc}
 \end{subfigure}
@@ -375,13 +378,28 @@ the following process was followed.
 
 
 \appendix
-\section{Appendix 1}
-\label{sec:App1}
+\section{Appendix A}
+\label{appendix:appA}
 
-% Commented out until I can be sure appendix reference works
-% \begin{table}
-%   \includegraphics{Human_kcal_consumption_table.png}
-% \end{table}
+\begin{table}[!htb]
+  \centering
+  \caption{Human caloric consumption by activity level}
+  \label{tbl:kCals}
+  \includegraphics[width=\linewidth]{figure_other/Human_kcal_consumption_table.png}
+\end{table}
+
+
+\section{Appendix B}
+\label{appendix:appB}
+
+\begin{table}[!htb]
+  \centering
+  \caption{Testing the assumption that draft animal end uses are constant over time,
+  using India as a case study}
+  \label{tbl:EndUses}
+  \includegraphics[width=\linewidth]{figure_other/Ag_Trans_Proportions.png}
+\end{table}
+
 
 \bibliography{MWPaper}
 
