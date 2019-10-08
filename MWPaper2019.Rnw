@@ -318,20 +318,31 @@ the following process was followed.
 \section{Results}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Muscle work metrics were broken up by region and animal/worker type.
+When all regions were combined, 
+it was shown that worldwide muscle work consistently increased from 1800-2000,
+at which point it started decreasing.
+
+The notable results of this work are:
+\begin{enumerate}
+  \item Regions in which developing countries predominate (SE Asia, Africa, W. Asia)
+  have expanded their use of muscle work, just as more developed regions have
+  turned to other fuel types.
+  \item The decline in use of horses as work animals caused 2015
+  to be the first year in which
+  humans were doing as much muscle work as animals.
+  \item Human muscle work (HMW) and animal muscle work (AMW) growth rates 
+  are not necessarily coupled. 
+  \item HMW efficiency has decreased 30-50\% in the developed regions of 
+  Europe and North America, 
+  whereas it has decreased less than 10\% in other world regions.
+\end{enumerate}
 
 
 % Quad chart!
 
 % Using the hints found here: http://shantoroy.com/latex/add-subfig-in-latex/
 % and here: https://tex.stackexchange.com/questions/222656/how-to-align-multiple-subfigures-in-a-grid
-
-% Paul: Note that the quad chart is unreadable, because the figures get too small.
-% Probably, you'll need to do the following:
-% * Increase the font size on the axes
-% * Increase font size on legends
-% * Ensure that all figures have exactly the same proportions (width/height)
-%   You may need to place the figures atop one another temproarily in Excel to get it right. 
-% * Ensure that all subfigure legends are same
 
 \begin{figure}[!htb]
 
@@ -371,6 +382,24 @@ the following process was followed.
 \caption{Hero figure.}
 \label{fig:hero_figure}
 \end{figure}
+
+%++++++++++++++++++++++++++++++
+\subsection{MW Efficiencies}
+\label{subsec:MW_efficiencies}
+%++++++++++++++++++++++++++++++
+The final to useful muscle work of animals did not change over time,
+as it was assumed that they did the same amount of work,
+and ate the same amount of food every year that was studied.
+
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\linewidth]{figure_other/HMW_efficiencies.png}
+  \caption{Final-Useful HMW conversion efficiency for different world regions. 
+  More developed regions shown as solid lines.}
+  \label{fig:eta_HMW_FU}
+\end{figure}
+
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
