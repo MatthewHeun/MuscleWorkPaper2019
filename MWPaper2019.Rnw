@@ -180,7 +180,7 @@ To quantify how many workers were actually involved in muscle work activities, 4
   \item Construct a time-series model of the human population in each region,
   categorized as either male or female, using data from Maddison2018.
   Several gaps in the data in Russia and Ukraine were filled using 
-  data from other sources TheRoyalGeographicalSociety1897, popustat.
+  data from other sources \cite{TheRoyalGeographicalSociety1897}, popustat.
   \item Quantify the proportion of regional working populations 
   data on the labor force participation rate for those above 15 years of age ILOSTATea
   and the proportion of the population above 15 years of age WorldBank15+.
@@ -390,6 +390,7 @@ The notable results of this work are:
 The final to useful muscle work of animals did not change over time,
 as it was assumed that they did the same amount of work,
 and ate the same amount of food every year that was studied.
+
 
 
 \begin{figure}[!htb]
