@@ -213,23 +213,11 @@ Values for an agricultural worker's power output was based
 off of Smil's value for maximum human labor power output Smil2004.
 This estimate was the same as that put forth by
 Giampietro and Pimentel Giampietro1990,
+who also assumed
+a difference in power of 30 percent between males and females.
 
-% Paul: The Giampietro1990 refernce is not in the .bib file.
-% You can't compile the paper unless you have all references
-% in the .bib file.
-% The easiest way to ensure that the paper always compiles
-% is to never allow it NOT to compile.
-% I've found that you need to use RStudio and LaTeX
-% in a manner similar to EES:
-% Compile early and compile often.
-% DON'T more ahead if you can't compile the file.
-% If you can't compile the file, sort out the problem
-% before you move on.
-%
-
-who also assumed a difference in power of 30 percent between males and females.
-
-For the world total, the total muscle work from each region was added together,
+For the world total,
+the total muscle work from each region was added together,
 as in the equation
 
 \begin{equation}
@@ -238,13 +226,38 @@ MW_{human,world,t} = \Sigma_{r,i} Workers_{r,i,t}P_iWHPY_{r,i,t}
 
 To find the final energy (food supply) used by working humans,
 the total daily caloric intake of workers in different industries was estimated
-using the lowest of the range of energy expenditures for "light activity" (non-working days)
+using the lowest of the range of energy expenditures for
+"light activity" (rest days - denoted RDCalories)
 and the lowest of the "very active" and "moderately active" energy expenditure values
-for primary and secondary workers respectively FAOWHO1973.
-
-
+for primary and secondary workers respectively (denoted WDCalories) 
+(FAOWHO1973).
 These values are tabulated in \ref{appendix:appA}.
+In addition to the food directly consumed for work,
+final energy (F) includes the energy of food wasted at the consumer level.
+The value for this form of waste in each region in the year 2000
+was given by Wirsenius data on Commodity Utilization Efficiency (CUE) (Wirsenius2000). 
+To account for the increase in the proportion of consumable food wasted
+over the past 50 years,
+an exponential curve fit was used to describe the rate of increase. 
+It was assumed that each region had
+a consumer wasteage percentage of 25\% in the year 1940.
+Thus, final energy could be calculated with the equation
+\begin{equation}
+F = \Sigma_{r,i} \frac{Workers_{r,i,t}WDPY_{r,i,t}(WDCalories_i+RDCalories_i(365-WDPY_{r,i,t}))}{CUE_{r,i,t}}
+\end{equation}
+WDPY in this equation refers to the number of "working days per year".
 
+
+To calculate the primary energy associated with HMW,
+one could use the equation
+\begin{equation}
+P = \frac{F}{FUE}
+\end{equation}
+F here represents the Final energy, calculated above.
+FUE is the "Feed Utilization Efficiency",
+which measures the proportion of the biomass grown in the field
+that actually makes it to the point of sale (Wirsenius2000).
+This number accounts for harvesting and transportation losses.
 
 %++++++++++++++++++++++++++++++
 \subsection{Animal Muscle Work}
@@ -322,15 +335,16 @@ When all regions were combined,
 it was shown that worldwide muscle work consistently increased from 1800-2000,
 at which point it started decreasing.
 
-The notable results of this work are:
+The notable results of this work are that:
 \begin{enumerate}
   \item Regions in which developing countries predominate (SE Asia, Africa, W. Asia)
   have seen growth in muscle work, just as more developed regions have turned
   to other sources for their useful work.
-  \item The decline in use of horses as work animals caused 2015
+  \item The decline in the use of the horse as a work animal caused 2015
   to be the first year in which
   humans were doing as much muscle work as animals.
-  \item Human muscle work (HMW) and animal muscle work (AMW) growth rates
+  \item It appears that human muscle work (HMW)
+  and animal muscle work (AMW) growth rates
   are not necessarily coupled.
   \item HMW efficiency has decreased 3-5x more in the developed regions of
   Europe and North America, than in other world regions.
@@ -342,44 +356,44 @@ The notable results of this work are:
 % Using the hints found here: http://shantoroy.com/latex/add-subfig-in-latex/
 % and here: https://tex.stackexchange.com/questions/222656/how-to-align-multiple-subfigures-in-a-grid
 
-\begin{figure}[!htb]
-
-\begin{subfigure}{0.49\textwidth}
-  % include first image
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Region.png}
-  \caption{Muscle work by region.}
-  \label{fig:MW_by_region}
-\end{subfigure}
-% Commented line here puts two subfigures on same line
-\begin{subfigure}{0.49\textwidth}
-  % include second image
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Region.png}
-  \caption{Muscle work percentages by region.}
-  \label{fig:MW_by_region_perc}
-\end{subfigure}
-% Linebreak here puts next subfigures on a new line
-
-\begin{subfigure}{0.49\textwidth}
-  % include third image
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Animal.png}
-  \caption{Muscle work by animal.}
-  \label{fig:MW_by_animal}
-\end{subfigure}
-% Commented line here puts two subfigures on same line
-\begin{subfigure}{0.49\textwidth}
-  % include fourth image
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Animal.png}
-  \caption{Muscle work percentages by animal.}
-  \label{fig:MW_by_animal_perc}
-\end{subfigure}
-
-\caption{Hero figure.}
-\label{fig:hero_figure}
-\end{figure}
+% \begin{figure}[!htb]
+% 
+% \begin{subfigure}{0.49\textwidth}
+%   % include first image
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Region.png}
+%   \caption{Muscle work by region.}
+%   \label{fig:MW_by_region}
+% \end{subfigure}
+% % Commented line here puts two subfigures on same line
+% \begin{subfigure}{0.49\textwidth}
+%   % include second image
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Region.png}
+%   \caption{Muscle work percentages by region.}
+%   \label{fig:MW_by_region_perc}
+% \end{subfigure}
+% % Linebreak here puts next subfigures on a new line
+% 
+% \begin{subfigure}{0.49\textwidth}
+%   % include third image
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/MW_qty_by_Animal.png}
+%   \caption{Muscle work by animal.}
+%   \label{fig:MW_by_animal}
+% \end{subfigure}
+% % Commented line here puts two subfigures on same line
+% \begin{subfigure}{0.49\textwidth}
+%   % include fourth image
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/MW_percent_by_Animal.png}
+%   \caption{Muscle work percentages by animal.}
+%   \label{fig:MW_by_animal_perc}
+% \end{subfigure}
+% 
+% \caption{Hero figure.}
+% \label{fig:hero_figure}
+% \end{figure}
 
 %++++++++++++++++++++++++++++++
 \subsection{MW Efficiencies}
@@ -391,20 +405,19 @@ One may notice that HMW efficiency decreases
 more drastically for developed, fully industrialized countries 
 (e.g. Western Europe and Offshoots). 
 This change is caused by the demographic shift towards industrialized labor,
-which requires less useful work
-for a similar amount of input. 
+which requires approximately 1/2 of the useful work
+for only a marginally smaller amount of food intake. 
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/HMW_efficiencies.png}
-  \caption{Final-Useful HMW conversion efficiency for different world regions.
-  More developed regions shown as solid lines.}
-  \label{fig:eta_HMW_FU}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/HMW_efficiencies.png}
+%   \caption{Final-Useful HMW conversion efficiency for different world regions.
+%   More developed regions shown as solid lines.}
+%   \label{fig:eta_HMW_FU}
+% \end{figure}
 
 In general, countries with a higher proportion of agricultural workers
 will be more efficient in their production of HMW.
-
 The model did not capture any changes in 
 efficiency based off of animal usage,
 as the working times and power outputs of each animal, 
@@ -416,7 +429,6 @@ no changes were observed for each animal's efficiency over time.
 The change for camelids was due to this category's inclusion of 
 2 animals of changing population proportions
 (camels and llamas). 
-
 However, there were differences in efficiency \textit{between} animals. 
 These differences can be seen in Figure \ref{fig:eta_AMW_FU}. 
 The most efficient animal, the mule, 
@@ -424,12 +436,12 @@ was nearly 3x as efficient as cattle and horses
 (the biggest sources of AMW).
 
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/AMW_efficiencies.png}
-  \caption{Final-Useful AMW conversion efficiency for different animal types. The two largest contributors to AMW (Horses and Cattle) both are approximately 3\% efficient}
-  \label{fig:eta_AMW_FU}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/AMW_efficiencies.png}
+%   \caption{Final-Useful AMW conversion efficiency for different animal types. The two largest contributors to AMW (Horses and Cattle) both are approximately 3\% efficient}
+%   \label{fig:eta_AMW_FU}
+% \end{figure}
 
 
 
@@ -441,12 +453,12 @@ was nearly 3x as efficient as cattle and horses
 \section{Appendix A}
 \label{appendix:appA}
 
-\begin{table}[!htb]
-  \centering
-  \caption{Human caloric consumption by activity level}
-  \label{tbl:kCals}
-  \includegraphics[width=\linewidth]{figure_other/Human_kcal_consumption_table.png}
-\end{table}
+% \begin{table}[!htb]
+%   \centering
+%   \caption{Human caloric consumption by activity level}
+%   \label{tbl:kCals}
+%   \includegraphics[width=\linewidth]{figure_other/Human_kcal_consumption_table.png}
+% \end{table}
 
 
 \section{Appendix B: Draft animal proportions and end-uses}
@@ -458,12 +470,12 @@ For less developed regions,
 this metric actually increased until the period between 1940-60.
 This is shown in Figure \ref{fig:DA_per_capita}.
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=\linewidth]{figure_other/DA_per_Capita.png}
-  \caption{Trends in the number of draft animals per capita for each region}
-  \label{fig:DA_per_capita}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[width=\linewidth]{figure_other/DA_per_Capita.png}
+%   \caption{Trends in the number of draft animals per capita for each region}
+%   \label{fig:DA_per_capita}
+% \end{figure}
 
 The end-uses of draft animals were assumed to be constant over time
 for every region except Africa. 
@@ -477,25 +489,25 @@ whereas the acceptance of the plow in semi-arid West Africa had only come about
 by the 1990s %Blench2015%.  
 
 
-\begin{figure}[!htb]
-  \centering
-  \caption{Testing the assumption that draft animal end uses are constant over time,
-  using India as a case study}
-  \label{fig:EndUsesTest}
-  \includegraphics[width=\linewidth]{figure_other/Ag_Trans_Proportions.png}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \caption{Testing the assumption that draft animal end uses are constant over time,
+%   using India as a case study}
+%   \label{fig:EndUsesTest}
+%   \includegraphics[width=\linewidth]{figure_other/Ag_Trans_Proportions.png}
+% \end{figure}
 
 The total amount of useful work directed towards each end-use
 did change during this time period, 
 partially due to a geographical shift in draft animal ownership
 from West to East. 
 
-\begin{figure}[!htb]
-  \centering
-  \caption{Proportion of total AMW directed towards each end-use}
-  \label{fig:AW_by_end_use}
-  \includegraphics[width=\linewidth]{figure_other/AW_by_end_use.png}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \caption{Proportion of total AMW directed towards each end-use}
+%   \label{fig:AW_by_end_use}
+%   \includegraphics[width=\linewidth]{figure_other/AW_by_end_use.png}
+% \end{figure}
 
 \bibliography{MWPaper}
 
